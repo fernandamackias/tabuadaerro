@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <script src="men.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+    <script>
+
+        function gerarTabuada() {
+            var numero = parseInt(document.getElementById('numero').value)
+            var tabela = document.getElementById('tabela-tabuada');
+            tabela.innerHTML = ""
+            for (var i = 1; i <= 10; i++) {
+                var resultado = numero * i
+                var linha = "<tr> <td>" + numero + " x "
+                    + i + " = " + resultado + "</td><td>";
+                tabela.innerHTML += linha
+
+            }
+        }
+
+        const toggleBtn = document.getElementById('toggle-mode');
+        const body = document.body;
+        const header = document.getElementById('head')
+
+        toggleBtn.addEventListener("click", function () {
+            body.classList.toggle("dark-mode")
+            header.classList.toggle("dark-mode-header")
+        }
+        )
+
+    </script>
+</head>
+
+<body>
+    <header id="head">
+        <button id="toggle-mode">Dia / Noite</button>
+        <center>
+            <h1>
+                <font color="#800080">T</font>
+                <font color="#63d3ff">A</font>
+                <font color="#38c958">B</font>
+                <font color="#ffaa00">U</font>
+                <font color="#076461">A</font>
+                <font color="#aa00ff">D</font>
+                <font color="#b31d6a">A</font>
+            </h1>
+        </center>
+
+    </header>
+
+    <main>
+        <p>Digite um valor para gerar sua tabuada:</p>
+        <input type="text" id="numero">
+        <button onclick="gerarTabuada()">Gerar Tabuada</button>
+        <table id="tabela-tabuada"></table>
+    </main>
+
+
+
+
+
+
+
+</body>
+
+</html>
